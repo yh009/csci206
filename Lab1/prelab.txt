@@ -11,3 +11,5 @@ Jan 20, 2015
    cat: display the entire contents of the file
 3. emacs -nw <filename>
 4. After careful consideration, i will use <emacs> in csci206 as my text editor.
+
+

@@ -12,3 +12,4 @@ struct snode *snode_create(char* ps, int lenS){
             return new_snode;
 }
 
+
