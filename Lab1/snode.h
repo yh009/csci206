@@ -4,7 +4,7 @@
 
 struct snode{
              char str[101];
-             int length = strlen(str);
+             int length;
              struct snode *next;
 };
 struct snode *snode_create(char *s, int length);
