@@ -22,6 +22,7 @@
 
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
 #include "snode.h"
 #include "slist.h"
@@ -102,23 +103,15 @@ slist_traverse(struct slist *l) {
 int 
 slist_find(struct slist *l, char *str) {
 	// WRITE CODE FOR THIS FUNCTION
-        int caller = 0;
 	int temp_counter2 = 1;
 	struct snode *temp_str2 = l->front;
-	while (true){
-	  if (temp_counter2 > l->counter){
-	    break;
+	while (temp_str2 != NULL){
+	  if (strcmp(temp_str2->str,str) == 0){
+	    return 1;
 	  }
-	  else if (temp_str2 == str){
-	    caller = 1;
-	    break;
-	  }
-	  else {
-	    temp_str2 = temp_str2->next;
-	    temp_counter2++;
-	  }
+	  temp_str2 = temp_str2->next;
+	  temp_counter2++;
 	}
-	return caller;
   return 0;
 }
 
