@@ -102,6 +102,23 @@ slist_traverse(struct slist *l) {
 int 
 slist_find(struct slist *l, char *str) {
 	// WRITE CODE FOR THIS FUNCTION
+        int caller = 0;
+	int temp_counter2 = 1;
+	struct snode *temp_str2 = l->front;
+	while (true){
+	  if (temp_counter2 > l->counter){
+	    break;
+	  }
+	  else if (temp_str2 == str){
+	    caller = 1;
+	    break;
+	  }
+	  else {
+	    temp_str2 = temp_str2->next;
+	    temp_counter2++;
+	  }
+	}
+	return caller;
   return 0;
 }
 
