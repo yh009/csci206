@@ -1,0 +1,75 @@
+Yuxuan Huang
+Prelab4
+
+Exercise 1:
+1) gcc -g  / gcc -ggdb
+2) gdb break 50
+3) gdb print count
+4) gdb set count=42
+
+Exercise 2:
+$zero: The zero register ($zero or $0) always contains a value of 0.Any writes to this register are ignored.Can be used for copy the contents of $s0 to $t0 as: 
+add $t0,$s0,$zero
+
+$at: The $at (Assembler Temporary) register is used for temporary values within pseudo commands. It is not preserved across function calls. 
+For example, with the (slt $at, $a0, $s2) command, $at is set to one if $a0 is less than $t2, otherwise it is set to zero.
+
+$v0-$v1: The $v Registers are used for returning values from functions. They are not preserved across function calls. $v0 is 32-bit,$v1 is 64-bit.
+For example, simple calculation: 
+subu $v0, $v1,1   #compute n-1
+
+$a0-$a3: First four arguments to functions.Function argument registers that hold the first four words of integer type arguments. Functions use these register to hold floating point arguments. The $a registers are used for passing arguments to functions. 
+li $a0,10  #put argument (10) in $a0
+
+$t0-$t7: Temporary registers you can use as you want. 
+add $t0, $t1, $t2   #simple addition
+
+$s0-$s7: Saved register to use freely. Preserved across function calls. Must be saved before use by the called function.
+lw $s0, 24($sp)   #restore $s registers saved in prologue
+
+$t8-$t9: Same as $t0-$t7
+
+$k0-$k1: reserved for use by the operating system kernel and for exception return.
+
+$gp: Global pointer
+lw $t0, 0($gp)  # load 0 to $t0 with the pointer point to 0
+
+$sp: Stack pointer
+addiu $sp,$sp,-8  #allocate 2 words on the stack
+
+$fp: frame pointer
+sw $fp, 16($sp)  #save old frame pointer
+
+$ra: return address register, saved by the calling function. Available for use after saving.
+sw $ra,20($sp)  #save return address
+
+Exercise 3:
+1)addi $s1,$s3,2
+  a)Adds the integer part of the value contained in the source register to integer 2;stores the result into destination register. $s1=$s3+2
+  b)Source Reg: $s3
+  c)Dest Reg: $s1
+
+2)lw $t6,4($s0)
+  a)move data from memory address ($s0+4)into register $t6
+  b)Source Reg: $s0
+  c)Dest Reg: $t6
+
+3)add $t3, $s1, $s2
+  a)Adds the values contained in the two source  registers; stores the result into the temporary destination register. Effectively: $t3 = $s1 + $s2.
+  b)Source Reg: $s1,$s2
+  c)Dest Reg: $t3
+
+4)sub $v0, $t1, $s2
+  a)Subtracts the values contained in the two source  registers; stores the result into the destination register. Effectively: $v0=$t1-$t2
+  b)Source Reg: $t1,$s2
+  c)Dest Reg: $v0
+
+Exercise 4:
+1)01000001
+2)000000B3
+3)0000005F
+4)1101111010101101101111101110
+5)111101101
+
+
+
