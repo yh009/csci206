@@ -1,0 +1,13 @@
+Feedback for lab3 (100 points)
+3/5: prelab.txt has descriptions of each of the following functions: creat, open, read, write, close (You were asked to describe these in your own words. Please don't copy from the man page.)
+4/5: prelab.txt has descriptions of each of the following functions:  fopen, fseek, fgets, fprintf, fclose. (You described fgetc rather than fgets.)
+5/5: (prelab)head.c uses the appropriate functions (open, read, close) to print the first 10 bytes of the file with the filename passed on the command line and follows good C coding conventions. ()
+5/5: (prelab)head2.c uses the appropriate functions (fopen, fgets, fclose) to print the first 10 lines of the file with the filename passed on the command line and follows good C coding conventions. ()
+5/5: (prelab)for correctly creating ~/csci206/Labs/Lab3 and placing your prelab.txt, head.c, and head2.c files in the right location. Make sure to use the correct case for the names of directories and files for full credit. ()
+10/10: Exercise 1: wc_sys.c uses the appropriate file I/O methods to compute the correct word count of input files. ()
+10/10: Exercise 1: wc_std.c uses the appropriate file I/O methods to compute the correct word count of input files. ()
+10/25: Exercise 2: word_freq.c works as specified with added command line argument. (Does not compile)
+10/20: Exercise 3: persistent_word_count.c created and works as expected. (Does not compile)
+10/10: followed good coding conventions and pushed to gitlab properly. ()
+------------------------------
+Total Score: 72/100
