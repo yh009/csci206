@@ -34,14 +34,25 @@ kvar:
 donestring:
 .asciiz "loop terminated, i= "
 # code segment --------------------------------------
+prompt:
+.asciiz "Enter the value to search for:"
+donestring2:
+.asciiz "value not found"
 .text
 init:
 	li 	$s3, 0 		# store 0 in i
 	sw 	$s3, ivar
 	li 	$s5, 7 		# store 7 in k
 	sw 	$s5, kvar
+	li      $v0, 4
+	la      $a0, prompt
+	syscall
+	li      $v0, 5
+	syscall
+	add     $t0,$v0,$zero
+	
     la 	$s4, save 	# put the address of save[0] in $s4
-    addi 	$t0, $zero, 7 	# $t0=7 
+#    addi 	$t0, $zero, 7 	# $t0=7 
         
 test:
 	# reserve $t1 for byte offset of save array
@@ -50,6 +61,7 @@ test:
 	add	$t1, $t1, $s4		# $t1 = &save[0] + $t1 (byte address of save[i])
 	lw	$t2, 0($t1)		# $t2 = save[i]
 	beq	$t2, $t0, terminate
+	bge     $t1,9,terminate2
 	addi	$s3, $s3, 1
 	j	test
 	 
@@ -65,3 +77,10 @@ terminate:
 	li 	$v0, 10 		# terminate program
 	syscall	
 	
+terminate2:
+        la      $a0,donestring2
+        li      $v0,4
+        syscall
+        
+        li      $v0,10
+        syscall
