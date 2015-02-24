@@ -31,10 +31,59 @@
 
 	.data
 A:	.word 5 4 3 2 4 1 0	# declare array int A[]={5,4,3,2,4,1,0};
+output1:
+.asciiz "Number of elements = "
+output2:
+.asciiz "Summation = "
+nextline:
+.asciiz "\n"
+count1: .word 0
+count2: .word 0
 
 	.text	
 main:				# This symbols marks the first instruction of your program
 
+       li $s0,0
+       sw $s0,count1            # number counter
+       li $s1,0
+       sw $s1,count2            # sum counter
+       li $t0,0
+       
+L1:
+       lw $t1,A($t0)             
+       beq $t1,0,terminate      # if end of array, terminate
+       addi $s0,$s0,1           # counter = counter+1
+       add $s1,$s1,$t1          # sum = sum + element
+       addi $t0,$t0,4           # next element
+       j L1
+       
+terminate:
+       li $v0,4                 # print number of elements
+       la $a0,output1
+       syscall
+       
+       li  $v0,1
+       add $a0,$s0,$zero
+       syscall
+       
+       li $v0,4                 # change line
+       la $a0,nextline
+       syscall
+       
+       li $v0,4                 # print sum
+       la $a0,output2
+       syscall
+       
+       li  $v0,1
+       add $a0,$s1,$zero
+       syscall
+       
+       li  $v0,10
+       syscall
+       
+       
+       
+        
 #
 # Add your code here
 #
