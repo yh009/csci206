@@ -17,9 +17,9 @@ main:
 	jal	myFunc
 	add	$s0, $zero, $v0		# save result in $s0
 
-	# Call myFunc(4, 5)
-	addi	$a0, $zero, 4
-	addi	$a1, $zero, 5
+	# Call myFunc(5, 6)
+	addi	$a0, $zero, 5
+	addi	$a1, $zero, 6
 	jal	myFunc
 	add	$s1, $zero, $v0     	# save result in $s1
 
