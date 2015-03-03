@@ -34,7 +34,14 @@ E:	.word 3
 F:	.word 8
 Result1:.word 0xDEADBEEF
 Result2:.word 0xDEADBEEF
-
+print1:
+        .asciiz "The first result:"
+print2:
+        .asciiz "The second result:"
+nextline:
+        .asciiz "\n"
+        
+        
 	.text
 
 # The main() procedure calls largeProc, storing the results into
@@ -43,10 +50,46 @@ Result2:.word 0xDEADBEEF
 main:
 
 # Prepare arguments to pass to largeProc
+        lw $a0, A
+        lw $a1, B
+        lw $a2, C
+        lw $a3, D
+        lw $s0, E
+        lw $s1, F
+        addi $sp, $sp,-8
+        sw $s0, 0($sp)
+        sw $s1, 4($sp)
 
 # Call largeProc
-
+        jal largeProc
+        addi $sp, $sp, 8
+        
 # Print the results returned from largeProc
+        move  $t0,$v0
+        move  $t1,$v1
+        
+        li $v0, 4
+        la $a0, print1
+        syscall
+        
+        li $v0, 1
+        move $a0, $t0
+        syscall
+        
+        li $v0, 4
+        la $a0, nextline
+        syscall
+        
+        li $v0, 4
+        la $a0, print2
+        syscall
+        
+        li $v0, 1
+        move $a0, $t1
+        syscall
+        
+        
+        
 
 # The program is finished. Terminate the execution.
 	addi	$v0, $zero, 10		# system call for exit
@@ -61,16 +104,33 @@ largeProc:
 # your code goes here
 	
 	# Store registers which must be saved onto the stack
+	
 
 	# Compute the first result
+	add  $v0,$a1,$a3
+	add  $v0,$v0,$s1
 
 	# Compute the second result
+	sub  $v1,$a0,$a2
+	add  $v1,$v1,$s0
+	
 
 	# Call smallProc for the heck of it, but save $v0,
 	# and $v1 because smallProc could possibly overwrite them!
-
+	add  $sp,$sp,-12
+        sw   $ra,0($sp)
+        sw   $v0,4($sp)
+        sw   $v1,8($sp)
+	jal  smallProc
+	
+        
 	# Restore registers using the stack
-
+	lw   $v1, 8($sp)
+	lw   $v0, 4($sp)
+	lw   $ra, 0($sp)
+	addi $sp, $sp, 12
+        
+        
 	jr	$ra
 
 # This procedure computes nothing useful, it just returns
