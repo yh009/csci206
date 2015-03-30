@@ -36,7 +36,7 @@ unsigned int f2u(float f);
 unsigned long long d2u(double d);
 float u2f(unsigned int u);
 double u2d(unsigned long long u);
-
+void precision();
 
 int main()
 { 
@@ -44,6 +44,7 @@ int main()
     inspect_float(one_half_single());
     printf ("0.5 (double) = %lf\n", u2d(d2u(one_half_double())));
     inspect_double(one_half_double());
+    precision();
             
 }
 
@@ -64,3 +65,20 @@ void inspect_double(double d){
     printf("sign = %1d, exponent = 0x%03x, fraction = 0x%013x\n", sign,
         exponent, fraction);
 }
+
+void precision (){
+    float f = 1.0;
+    float f1 = u2f(f2u(f) +1);
+    printf("The next floating number is :\n");
+    inspect_float(f1);
+    printf("The precision is: %.20f\n",f1-f);
+    //The precision is: 0.00000011920928955078
+    f = 20.345;
+    f1 = u2f(f2u(f)+1);
+    printf("The precision is: %.20f\n",f1-f);
+    //The precision is: 0.00000190734863281250
+    //The precision depends on the real value of the number. 
+    //The larger the number, the less precision it gets.
+}
+
+
