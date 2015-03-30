@@ -30,9 +30,37 @@
  */
 float one_half_single(void);
 double one_half_double(void);
+void inspect_float(float f);
+void inspect_double(double d);
+unsigned int f2u(float f);
+unsigned long long d2u(double d);
+float u2f(unsigned int u);
+double u2d(unsigned long long u);
+
 
 int main()
 { 
-    printf ("0.5 (single) = %f\n", one_half_single());
-    printf ("0.5 (double) = %lf\n", one_half_double());
+    printf ("0.5 (single) = %f\n", u2f(f2u(one_half_single())));
+    inspect_float(one_half_single());
+    printf ("0.5 (double) = %lf\n", u2d(d2u(one_half_double())));
+    inspect_double(one_half_double());
+            
+}
+
+void inspect_float(float f){
+    unsigned int flo = f2u(f);
+    unsigned int sign = flo >> 31;
+    unsigned int exponent = ((flo << 1) >> 24) & 0xFF;
+    unsigned int fraction = flo & 0x7FFFFF;
+    printf("sign = %1d, exponent = 0x%02x, fraction = 0x%06x\n", sign,
+        exponent, fraction);
+}
+
+void inspect_double(double d){
+    unsigned long long k = d2u(d);
+    unsigned int sign = (k >> 63) & 0x1;
+    unsigned int exponent = ((k << 1) >> 53) & 0x7FF;
+    unsigned long long fraction = k & 0x1FFFFFFFFFFFFF;
+    printf("sign = %1d, exponent = 0x%03x, fraction = 0x%013x\n", sign,
+        exponent, fraction);
 }
