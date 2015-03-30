@@ -37,6 +37,9 @@ unsigned long long d2u(double d);
 float u2f(unsigned int u);
 double u2d(unsigned long long u);
 void precision();
+void sum();
+int is_near(float a, float b, float epsilon);
+
 
 int main()
 { 
@@ -45,6 +48,7 @@ int main()
     printf ("0.5 (double) = %lf\n", u2d(d2u(one_half_double())));
     inspect_double(one_half_double());
     precision();
+    sum();
             
 }
 
@@ -81,4 +85,36 @@ void precision (){
     //The larger the number, the less precision it gets.
 }
 
+void sum()
+{
+    float a = 0.1;
+    float sum = 0;
+    int i;
+    for (i = 0; i < 1000; i++)
+    {
+        sum += a;
+    }
 
+    printf ("a = %1.28f, sum = %1.28f, sum == 100 ==> %s\n",
+            a,
+            sum,
+	    // sum == 100 ? "TRUE":"FALSE",
+            is_near(sum, 100, 0.01) ? "TRUE":"FALSE");
+
+    inspect_float(a);
+    inspect_float(sum);
+    inspect_float(100-sum);
+}
+// When adding a big floating number to a small one, we need to right shift the mantissa of the small one. Then we would lose some least significant digits.
+//That's why we cant get to exact 100
+
+int is_near(float a, float b, float epsilon){
+  float diff = a - b;
+  if (diff > 0 && diff < epsilon){
+    return 1;
+  }
+  if (diff < 0 && (-diff) < epsilon){
+    return 1;
+  }
+  return 0;
+}
