@@ -1,0 +1,20 @@
+Yuxuan Huang
+Lab 9
+
+(1.1) over1 uses gets(char *str), which reads from stdin and 
+stores into the pointed string. It doesn’t have any mechanism to
+prevent overflow. 
+      over2 uses fgets(char *str,int n, FILE *stream), which stops when (n-1) characters are read. This prevent overflow. 
+
+(1.2) over3 uses scanf(char *format) reads formatted input from
+stdin. Its basically works the same way as gets(), but it ends taking input upon encountering a space, newline or EOF. 
+
+(1.3) a)Avoid using gets(). Its offers no protections against a buffer overflow vulnerability.
+      b)Avoid using scanf(). It has the same problem as gets().
+      c)Use fgets(). Even if its sometimes inconvenient. 
+
+(1.4) When using scanf(), there is a trick to avoid buffer overflow. 
+      For example, scanf(“%s”,input) tries to take in the input from stdin until a space or EOF encountered.
+      This can cause overflow easily, since the buffer “input” have limited space.
+      scanf(“%9s”,input) only takes in 9 non-space characters.This helps to avoid overffow.
+
