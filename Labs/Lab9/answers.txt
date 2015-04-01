@@ -18,3 +18,68 @@ stdin. Its basically works the same way as gets(), but it ends taking input upon
       This can cause overflow easily, since the buffer “input” have limited space.
       scanf(“%9s”,input) only takes in 9 non-space characters.This helps to avoid overffow.
 
+(2.1) main is at text segment .
+      i, j, k, buf is at stack segment.
+
+
+(2.2) The order: 11,12,1,2,3,4.
+      Therefore, it’s i,j,a,b,c,d
+      i=11,j=12 are pushed onto the stack. a=1,b=2,c=3,d=4 on $a0-$a3
+
+(2.3) 0x0040082c. 
+      I used the gdb disassembler.
+
+(2.4) address: &i = 0x7fff26435b6c = 0111 1111 1111 1111 0010 0110 0100 0011 0101 1101 1100 1110
+      value: 0x7fff26435b6c: 0x0b = 0000 1101 = 11
+
+
+(2.5) It’s Little Endian. Since the least significant byte is stored in the smallest address.
+
+(2.6) In big endian, you store the most significant byte in the smallest address.
+      For example, a value 0x90AB12CD
+            address|value
+             1000  |90
+             1001  |AB
+             1002  |12
+             1003  |CD
+      In little endian, you store the least significant byte in the smallest address.
+            address|value
+             1000  |CD
+             1001  |12
+             1002  |AB 
+             1003  |90
+
+(2.7) 0x7fb574c8
+          Local variables
+             &buf = 0x7fff26435b90 ~ 0x7fff26435b9b
+             &k = 0x7fff26435b8c
+             
+          The old base pointer
+             &p = 0x600bc8
+          The return address
+             &main = 0x40063f
+          Parameters to the function
+             &i = 0x7fff26435b6c
+             &j = 0x7fff26435b68
+             &a = 0x7fff26435b7c
+             &b = 0x7fff26435b78
+             &c = 0x7fff26435b74
+             &d = 0x7fff26435b70
+      0x7fb574f4
+
+(2.8) The canary value must be overwritten.
+
+(2.9) stack
+
+(2.10) The size of the text segment would not change after the program was compiled. In memory the start of the text segment is the start of the program. Therefore, we determine the boundary of text segment, and make things impossible to execute beyond the boundary. 
+We should prevent the program to change anything in the text segment after the program is compiled. 
+
+(2.11) The address of buf is smaller than that of k. 
+
+(2.12) It still can cause buffer overflow. 
+
+(3.1)  Analyze the output of this program. Explain in your own words what makes concat.c an insecure program.
+       concat_arguments function has but with limited length of 20 characters. A pointer p points to the beginning of the array, and it stores the value in the specific location on the array.
+       The main problem is, if the input is larger than 20 characters, it causes overflow. There isn’t any mechanism in this function to prevent that. 
+
+(3.2) Try to push an unknown length input into a limited length buffer usually cause problem.
