@@ -1,0 +1,17 @@
+//Yuxuan Huang
+//Lab10
+
+Exercise 1
+1) malloc allocates memory from low address to high address, and it starts from wherever 
+the previous allocated memory ends.
+
+2) malloc allocates extra space for each call. It used that extra space to store some
+bookkeeping information.
+
+3) It only changes after 7 times it’s called, because heap allocates memory dynamically.
+sbrk requests more memory from the system and here it only asks for more space after malloc
+called 7 times.
+
+4) 0x1dbb020 ~ 0x1dd4070
+Therefore, around 102480 bytes.
+
