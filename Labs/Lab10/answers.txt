@@ -1,0 +1,10 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  ns/call  ns/call  name    
+100.56      0.03     0.03    31301   963.79   963.79  slist_getnode
+  0.00      0.03     0.00    28191     0.00     0.00  str_make_lower
+  0.00      0.03     0.00     3110     0.00     0.00  slist_add_back
+  0.00      0.03     0.00     3110     0.00     0.00  snode_create
+  0.00      0.03     0.00        1     0.00     0.00  slist_create
