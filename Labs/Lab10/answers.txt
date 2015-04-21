@@ -8,3 +8,14 @@ Each sample counts as 0.01 seconds.
   0.00      0.03     0.00     3110     0.00     0.00  slist_add_back
   0.00      0.03     0.00     3110     0.00     0.00  snode_create
   0.00      0.03     0.00        1     0.00     0.00  slist_create
+exercise 2:
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  us/call  us/call  name    
+ 93.26      0.83     0.83                             while
+  6.74      0.89     0.06    28191     2.13     2.13  str_make_lower
+  0.00      0.89     0.00     3110     0.00     0.00  slist_add_back
+  0.00      0.89     0.00     3110     0.00     0.00  snode_create
+  0.00      0.89     0.00        1     0.00     0.00  slist_create
