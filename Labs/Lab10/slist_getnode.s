@@ -13,14 +13,14 @@ slist_getnode:
 	sw $ra, 8($sp)
 while:
         beq $t2,0,return_null
-        sw $t2, 4($sp)
-        lw $a1, 4($t2)
-        lw $a0, 0($sp)
+        sw $t2, 4($sp)                  #allocate stack and save $t2 to stack
+        lw $a1, 4($t2)                  #load address of text into $a1
+        lw $a0, 0($sp)                  #load address of str_input into $a0
         jal strcmp
         lw $t2, 4($sp)
-        beq $v0, 0, return
+        beq $v0, 0, return              
         nop
-        lw $t2, 0($t2)
+        lw $t2, 0($t2)                  #load next node into $t2
         j while
         nop
 return:
