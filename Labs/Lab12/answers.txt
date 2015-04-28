@@ -1,0 +1,21 @@
+Yuxuan Huang
+Lab12
+
+2.1) The miss rate decreases.
+     This is because when block size increases, the miss rate decreases, due to special locality.
+
+2.2) The miss rate decreases.
+     More data can be stored in cache when the size of cache doulbes, thus the miss rate
+decreases.
+
+2.3) Demand, Compulsory and capacity misses decreased.
+     Same reason as above.
+
+2.4) The capacity miss decreased as cache size increases. When cache gets large, the performance would decrease.
+
+2.5) Demand miss rate and conflict misses increases.
+     Since the cache size is small, less data stored in cache, miss rate increases.
+
+2.6) Miss rate decreases. Larger cache size, less capacity and conflict miss.
+
+2.7) The performance of the cache with a L2 cache is better. Since miss in L1 would be stored in L2, this reduce memory access and improve performance.
