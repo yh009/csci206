@@ -19,3 +19,6 @@ decreases.
 2.6) Miss rate decreases. Larger cache size, less capacity and conflict miss.
 
 2.7) The performance of the cache with a L2 cache is better. Since miss in L1 would be stored in L2, this reduce memory access and improve performance.
+
+3) With only L1 cache, it performs the best when using 32k cache with 128byte block and 2 way association.
+   First, the performance of 32k cache and 64k cache is similar. Second, the performance of 2-way and 4-way association is small. 
