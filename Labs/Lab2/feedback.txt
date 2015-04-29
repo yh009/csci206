@@ -1,0 +1,7 @@
+Feedback for lab2 (100 points)
+25/25: (prelab) snode-test2.c missing
+5/5: follows good coding conventions ()
+25/35: music1.c: No header files in the Lab2 folder (won't compile)
+25/35: music2.c: No header files in the Lab2 folder (won't compile)
+------------------------------
+Total Score: 80/100

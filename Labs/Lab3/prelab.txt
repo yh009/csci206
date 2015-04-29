@@ -1,0 +1,73 @@
+//Yuxuan Huang
+//1pm
+
+//creat(2):
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+
+int open(const char *pathname, int flags);
+int open(const char *pathname, int flags, mode_t mode);
+
+int creat(const char *pathname, mode_t mode);
+
+If the file does not exist it will be created.
+
+//open(2):equivalent to creat().
+
+//read(2):
+#include <unistd.h>
+ssize_t read(int fd,void *buf,size_t count);
+
+read()attempts to read up to count bytes from file descriptor fd into the buffer starting at buf.
+If count is zero, read() returns zero and has no other results.   If  count is greater than SSIZE_MAX, the result is unspecified.
+
+//write(2):
+#include <unistd.h>
+ssize_t write(int fd, const void *buf, size_t count);
+
+write()  writes  up  to count bytes from the buffer pointed buf to the file
+referred to by the file descriptor fd.
+
+//close(2):
+#include <unistd.h>
+int close(int fd);
+
+close()  closes  a file descriptor, so that it no longer refers to any file and may be reused.
+
+//fopen(3):
+#include <stdio.h>
+FILE *fopen(const char *path, const char *mode);
+
+The  fopen() function opens the file whose name is the string pointed to by path
+and associates a stream with it.
+
+//fgets(3):
+#include <stdio.h>
+char *fgets(char *s, int size, FILE *stream);
+
+fgetc()  reads the next character from stream and returns it as an unsigned char
+cast to an int, or EOF on end of file or error.
+
+//fprintf(3):
+#include <stdio.h>
+int fprintf(FILE *stream, const char *format, ...);
+
+The  functions  in  the  printf() family produce output according to a format as
+described.
+
+//fseek(3):
+#include <stdio.h>
+int fseek(FILE *stream, long offset, int whence);
+
+The  fseek() function sets the file position indicator for the stream pointed to
+by stream.  The new position, measured in bytes, is obtained  by  adding  offset
+bytes  to  the  position  specified  by  whence.   If whence is set to SEEK_SET,
+SEEK_CUR, or SEEK_END, the offset is relative to the start of the file, the current position indicator, or end-of-file, respectively.
+
+//fclose(3):
+#include <stdio.h>
+int fclose(FILE *fp);
+
+The  fclose()  function  will  flushes  the stream pointed to by fp and closes the underlying file descriptor.
+

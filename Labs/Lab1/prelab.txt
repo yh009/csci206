@@ -1,0 +1,15 @@
+<Yuxuan Huang>
+CSCI206
+Lab1
+Jan 20, 2015
+
+1. $mkdir -p ~/csci206/labs/Lab1
+2. head: displays the beginning of a file
+   tail: reverse of head, can view the last n lines as u need
+   more: view text in the terminal window one page at a time
+   less: similiar to more, but allow backward and single-line movement
+   cat: display the entire contents of the file
+3. emacs -nw <filename>
+4. After careful consideration, i will use <emacs> in csci206 as my text editor.
+
+

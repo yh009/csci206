@@ -1,0 +1,12 @@
+Feedback for lab1 (100 points)
+5/5: (prelab)one line mkdir -p ~csci206/Labs/Lab1
+5/5: (prelab)One sentence description of each of the following commands do: cat,  more,  less, head, and tail
+5/5: (prelab)The complete command line to start up emacs without a GUI (emacs -nw)
+5/5: (prelab)Then complete this sentence in your file: After careful consideration, I will use <vim/gvim or emacs> in csci206 as my text editor.
+5/5: (prelab)Files submitted in the correct path (Labs/Lab1)
+20/20: snode.h has a working definition of struct snode
+10/10: snode.h has a correct declaration for snode_create
+25/25: snode.c has a correct snode_create that uses malloc and strcpy; deduct if it does not set length, str, or next
+20/20: Code follows good coding conventions
+------------------------------
+Total Score: 100/100
