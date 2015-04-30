@@ -1,0 +1,12 @@
+Feedback for lab9 (100 points)
+16/16: prelab Exercise 1 (4 pts ea): 
+        1. You should notice that the pointers returned by subsequent calls to malloc are returned in increasing order. What do you think this implies about how malloc allocates memory?
+        2. Each call to malloc requests 0x5000 bytes of memory but if you look at the pointers returned, they are separated by more than 0x5000 bytes. What do you think this implies about how malloc allocates memory?
+        3. The call to sbrk(0) returns the address of the end of the heap. Explain how this changes and why.
+        4. How many bytes does glibc request from the operating system when increasing the heap size? (good)
+9/9: prelab Exercise 2 (9 pts): working hello.s with stack and printf (good)
+20/20: Ex 1: gprof results in answers.txt (Good)
+25/25: Ex 2: completed slist_getnode.s and profile in answers.txt (with gprof results. slist_getnode.s correct)
+30/30: Ex 3: word_freq.s (Found word_freq.s and word_freq_ex3.c. All functions in assembly, good job!)
+------------------------------
+Total Score: 100/100

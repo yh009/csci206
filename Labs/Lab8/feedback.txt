@@ -1,0 +1,8 @@
+Feedback for lab7 (100 points)
+23/25: Prelab (see lab check sheet) (Please name files as specified in the lab)
+10/10: Exercise 1: Modified floats.s to define the correct values for ohs and ohd. (Correct values)
+23/25: Exercise 2: inspect_float and inspect_double work correctly. Implemented f2u, u2f, d2u, and u2d in floats.s. (incorrect floating point return registers for u2d)
+25/25: Exercise 3: precision implemented. Comments have the correct value for the next float after 1.0. Comments discuss how precision changes for large/small numbers. ()
+12/15: Exercise 4: sum added with comments describing why it doesn't work as it. Implemented the is_near function and modified sum to use it with an appropriate epsilon. (What you say for sum is correct; however, there is no way to represent 0.1 exactly. So adding big and small numbers is not really the important issue.)
+------------------------------
+Total Score: 93/100

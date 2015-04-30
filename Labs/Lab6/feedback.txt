@@ -1,0 +1,8 @@
+Feedback for lab6 (100 points)
+12/15: prelab Exercise 1: Leaf procedure implemented in prelab.s. Function returns the proper value. The static variable C is properly defined in the data segment. $ra is noted for the two calls to my_func in a comment. (should output 8)
+10/10: prelab Exercise 2: collatz.c is completed correctly using a recursive function (find_length) and a leaf function (collatz). C Coding conventions are followed (including adding good comments). (correct output)
+19/20: Exercise 1: xfind.s: (3 points) for documenting register assignments; (2 points) for commenting code; (15 points) for correct functionality. (lacking register documentation)
+26/30: Exercise 2: largeproc.s: (5 points) for documenting register assignments; (5 points) for commenting code; (5 points) for correct stack frame for small_proc; (5 points) for correct stack frame for large_proc; (10 points) for correct functionality. (first result should be 14)
+5/25: Exercise 3: collatz.s: (3 points) for documenting register assignments; (2 points) for commenting code; (10 points) for correct stack frames in all procedures; (10 points) for correct functionality. (almost entire file missing)
+------------------------------
+Total Score: 72/100

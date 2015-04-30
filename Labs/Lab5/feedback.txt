@@ -1,0 +1,10 @@
+Feedback for lab5 (100 points)
+10/12: prelab Exercise 1: Begin address, ending address, and size for each of the 4 memory segments (text, data, heap, stack) (1 pt each). (Stack memory locations off slightly)
+5/5: prelab exercise 2: The 5 syscalls are provided with the correct details to run using functionality from SPIM or MARS (GUI). (1 pt each) (good)
+8/8: prelab Exercise 3: sumsquares.asm created and appears to have all the functionality (array/algorithm/IO). The program does not have to compile or work correctly for full credit. (good)
+15/15: (Exercise 1) answers.txt contains answers the 3 questions given in the lab about sumsquares.c. For full credit you must show evidence that you gave  (good)
+17/20: (Exercise 2) searcharray.s was modified to prompt the user for the value to search for and stop if the value is not found and print "value not found". (Program looks correct but does not give expected output)
+20/20: (Exercise 3) sumarray.s completed, correctly detects the length of the array and computes the sum (including if it is zero-length) using the appropriate array access method. (good)
+0/20: (Exercise 4) sumsquares.s completed and runs; output matches the C version (minor formatting variations are acceptable). (sumsquares.s missing)
+------------------------------
+Total Score: 75/100

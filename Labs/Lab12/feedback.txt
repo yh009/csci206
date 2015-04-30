@@ -1,0 +1,6 @@
+Feedback for lab12 (100 points)
+25.0/25: ls.out, pwd.out and wc.out added to git repo (ls.out: found, pwd.out: found, wc.out: found)
+45/49: Ex 2: 7 questions ((2.1): good, (2.2): good, (2.3): good, (2.4): good, (2.5): Didn't mention associativity in your explanation., (2.6): Explain your findings., (2.7): good)
+23/26: Ex 3: Select a cache design that provides a good balance between low miss rate and small size. (How did you choose block size?)
+------------------------------
+Total Score: 93.0/100

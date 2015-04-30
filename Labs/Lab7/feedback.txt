@@ -1,0 +1,8 @@
+Feedback for lab7 (100 points)
+10/10: Exercise 1; successfully modified exit.s (None)
+30/30: Exercise 2: primes C benchmarked, is_prime.s works and benchmarked as well. (output correct)
+20/20: Exercise 3: count-e implemented in C/asm (Output correct)
+20/20: Exercise 4: matrix_sum.c/s (Output correct)
+20/20: Exercise 5: time.c/s (good)
+------------------------------
+Total Score: 100/100
